@@ -29,7 +29,6 @@ public class Denuncia implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")
-	@JsonIgnore
 	private Usuario usuario_id;
 	
 	@OneToMany(mappedBy = "denuncia_id")
@@ -39,7 +38,7 @@ public class Denuncia implements Serializable {
 		super();
 	}
 
-	public Denuncia(Integer id, String descricao, String data, Endereco endereco, List<Arquivo> arquivos, Usuario usuario_id) {
+	public Denuncia(Integer id, String descricao, String data, List<Arquivo> arquivos, Endereco endereco, Usuario usuario_id) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
@@ -47,14 +46,6 @@ public class Denuncia implements Serializable {
 		this.endereco = endereco;
 		this.usuario_id = usuario_id;
 		this.arquivos = arquivos;
-	}
-
-	public Denuncia(Integer id, String descricao, String data, Endereco endereco) {
-		super();
-		this.id = id;
-		this.descricao = descricao;
-		this.data = data;
-		this.endereco = endereco;
 	}
 	
 	public Denuncia(Integer id, String descricao, String data, List<Arquivo> arquivos, Endereco endereco) {
