@@ -18,4 +18,9 @@ public class DenunciaService {
 		Optional<Denuncia> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+	
+	public Denuncia inserir(Denuncia obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
 }

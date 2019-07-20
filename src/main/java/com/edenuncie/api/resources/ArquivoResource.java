@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.edenuncie.api.domain.Denuncia;
-import com.edenuncie.api.services.DenunciaService;
+import com.edenuncie.api.domain.Arquivo;
+import com.edenuncie.api.services.ArquivoService;
 
 @RestController
-@RequestMapping(value="/denuncias")
-public class DenunciaResource {
+@RequestMapping(value="/arquivos")
+public class ArquivoResource {
 
 	@Autowired
-	private DenunciaService service;
+	private ArquivoService service;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> buscar(@PathVariable Integer id) {
 
-		Denuncia obj = service.buscar(id); 
+		Arquivo obj = service.buscar(id); 
 		return ResponseEntity.ok().body(obj);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Void>inserir(@RequestBody Denuncia obj){
+	public ResponseEntity<Void>inserir(@RequestBody Arquivo obj){
 		obj = service.inserir(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj).toUri();
 		return ResponseEntity.created(uri).build();

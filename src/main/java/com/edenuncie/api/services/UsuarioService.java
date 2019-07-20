@@ -18,4 +18,9 @@ public class UsuarioService {
 		Optional<Usuario> obj = repo.findById(id);
 		return obj.orElse(null);
 	}
+	
+	public Usuario inserir(Usuario obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
 }
