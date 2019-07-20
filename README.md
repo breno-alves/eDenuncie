@@ -55,8 +55,8 @@
 - **telefone** - Telefone do usuario
 - **email** - Email do usuario
 - **data** - Data de nascimento do usuario
-- **endereco** - Endereco do usuario
-- **denuncias** - Denuncias reportadas pelo usuario
+- **endereco** - Objeto Endereco
+- **denuncias** - Array de denuncias reportadas pelo usuario
 
 ```
 {
@@ -75,9 +75,9 @@
 - **id** - ID da denuncia
 - **descricao** - Tipo de denuncia
 - **data** - Data do ocorrido
-- **endereco** - Endereco do ocorrido
-- **usuario** - Usuario que reportou / Anonimo
-- **arquivos** - Arquivos de anexo
+- **endereco** - Objeto Endereco
+- **usuario** - Objeto Usuario / Anonimo
+- **arquivos** - Array de arquivos de anexo
 
 ```
 {
